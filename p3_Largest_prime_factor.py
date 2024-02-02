@@ -2,6 +2,8 @@
 
 # What is the largest prime factor of the given number? 
 
+
+#  the intuition is to first find the 
 def largest_prime_factor(number):
     """Return the largest prime factor of the given number."""
     # Find all the prime factors of the number.
@@ -16,6 +18,10 @@ def largest_prime_factor(number):
         prime_factors.append(number)
     # Return the largest prime factor.
     return max(prime_factors)
+
+# remember that any composite number non prime can be expressed as a product of prime numbers
+# to do that if number i is divisible by i even if i is not a prime number 
+# i itself must be a product of smaller prime numbers to get the smaller prime factors you repeatedly divide it by i
 
 
 # 6857
