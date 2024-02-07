@@ -13,7 +13,7 @@ def largest_palindrome_product(n):
             break
         for j in range(i, min_num-1, -1): 
 # you can also set the upper bound as max(min_num,i-100) or something like that 
-# to have lower checks and for better efficiency but it doesn't seem to be working
+# to have lower checks and for better efficiency but it doesn't seem to be working for this code
             product = i*j
             if product < max_palindrome:
                 break
@@ -28,15 +28,10 @@ class TestLargestPalindromeProduct(unittest.TestCase):
 
     def test_largest_palindrome_product_2(self):
         self.assertEqual(largest_palindrome_product(2), 9009)
-
-    def test_largest_palindrome_product_3(self):
+        self.assertEqual(largest_palindrome_product(5), 9966006699)
         self.assertEqual(largest_palindrome_product(3), 906609)
-
-    def test_largest_palindrome_product_4(self):
         self.assertEqual(largest_palindrome_product(4), 99000099)
 
-    def test_largest_palindrome_product_5(self):
-        self.assertEqual(largest_palindrome_product(5), 9966006699)
 
 
 
