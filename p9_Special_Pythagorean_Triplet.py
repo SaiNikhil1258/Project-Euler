@@ -5,42 +5,37 @@
 
 # There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find the product abc such that a + b + c = n.
 
-# The output of this program is 31875000.
 
-def find_triplet(n):
-    """Finds the pythagorean triplet for which a + b + c = n and returns the product abc
-
-    Args:
-        n (int): integer for which a + b + c = n
-
-    Returns:
-        _type_: the product abc for which a + b + c = n
-    """
-    for a in range(1, n // 3):
-        for b in range(a + 1, n // 2):
+def pythagorean_triplet(n):
+    triplets_product = []
+    for a in range(1, n):
+        for b in range(a, n):
             c = n - a - b
-            if a ** 2 + b ** 2 == c ** 2:
-                return a * b * c
-
-print(find_triplet(100))
-
-# print(200**2)
-# print(300**2)
-# print(500**2)
-
-# import unittest
+            if a**2 + b**2 == c**2:
+                # print(a, b, c)
+                triplets_product.append(a*b*c)
+# another list because for some n values there are multiple triplets so we append all the triplets into a list and return the list
+    return triplets_product
 
 
-# class Testfind_triplet(unittest.TestCase):
-#     def test_find_triplet_1(self):
-#         self.assertEqual(find_triplet(1000), 31875000)
-
-#     def test_find_triplet_2(self):
-#         self.assertEqual(find_triplet(100), 3750)
-
-#     def test_find_triplet_3(self):
-#         self.assertEqual(find_triplet(10), 30)
 
 
-# if __name__ == '__main__':
-#     unittest.main()
+# print(pythagorean_triplet(120))
+import unittest
+
+class Testpythagorean_triplet(unittest.TestCase):
+    
+    def test_pythagorean_triplet_1(self):
+        self.assertEqual(pythagorean_triplet(1000), [31875000])
+        
+    def test_pythagorean_triplet_2(self):
+        self.assertEqual(pythagorean_triplet(24), [480])
+        
+    # write a test case for n = 120
+    def test_pythagorean_triplet_3(self):
+        self.assertEqual(pythagorean_triplet(120), [49920,55080,60000])
+        
+
+
+if __name__ == '__main__':
+    unittest.main()
