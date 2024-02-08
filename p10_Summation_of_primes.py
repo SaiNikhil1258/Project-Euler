@@ -38,7 +38,7 @@ def sum_primes(n):
     return sum
 
 # Print the sum of all the primes below 10.
-print(sum_primes(17))
+# print(sum_primes(17))
 
 
 
