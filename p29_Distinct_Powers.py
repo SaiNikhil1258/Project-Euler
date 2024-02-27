@@ -12,28 +12,34 @@
 #   for 2 ≤ a ≤ n and 2 ≤ b ≤ n?
 
 
+def distinct_powers(n):
+    a = 1
+    b = 1
+    list = []
+    for i in range(2, n+1):
+        for j in range(2, n+1):
+            list.append(i**j)
+    return len(sorted(set(list)))            
+    
 
-n = 30
-a = 1
-b = 1
-list = []
-for i in range(2, n+1):
-    for j in range(2, n+1):
-        list.append(i**j)
+
+
+import unittest
+
+class Test(unittest.TestCase):
+    def test_1(self):
+        self.assertEqual(distinct_powers(15),177)
         
+    def test_2(self):
+        self.assertEqual(distinct_powers(20),324)
         
-print(len(sorted(set(list))))
-
-# unq = 
-
-
-
-
+    def test_3(self):
+        self.assertEqual(distinct_powers(25),519)
+        
+    def test_4(self):
+        self.assertEqual(distinct_powers(30),755)
 
 
-
-
-
-
-
+if __name__=="__main__":
+    unittest.main()
 
