@@ -13,9 +13,7 @@
 
 
 def distinct_powers(n):
-    a = 1
-    b = 1
-    list = []
+    a, b, list = 1, 1, [] 
     for i in range(2, n+1):
         for j in range(2, n+1):
             list.append(i**j)
