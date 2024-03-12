@@ -14,6 +14,7 @@ I believe the true value of Project Euler lies not just in finding the correct a
 * **Efficiency and optimization:** While finding a solution is important, I also aim to optimize my code for performance and resource usage.
 * **Exploration of multiple approaches:** When possible, I provide different perspectives and solutions to problems, fostering deeper understanding.
 * **Focus on educational value:** My solutions are not just about getting the answer; they also explain the reasoning and thought process behind each step.
+* * A comprehensive suite of tests has been implemented to identify and prevent various code problems. These tests cover areas such as functionality, edge cases, and performance.
 
 **Note:** Please be aware that some solutions in this repository might contain spoilers for the corresponding Project Euler problems. Proceed with caution if you want to avoid seeing solutions before attempting them yourself.
 
