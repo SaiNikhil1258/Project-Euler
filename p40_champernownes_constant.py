@@ -8,15 +8,29 @@
 
 # d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000
 
+import math
+import unittest
 
 
-def number(n):
-    s = "".join(str(i) for i in range(1, 10**n+1))
+
+def constant(n):
+    s = "".join(str(i) for i in range(1, n))
     ans = 1
-    for i in range(n):
+    for i in range(int(math.log10(n))+1):
         ans *= int(s[10**i-1])
     return ans
 
 
+class Test(unittest.TestCase):
+    
+    def test_1(self):
+        self.assertEqual(constant(100),5)
 
-print(number(7))
+    def test_2(self):
+        self.assertEqual(constant(1000), 15)
+
+    def test_3(self):
+        self.assertEqual(constant(1000000),210)
+
+if __name__ == "__main__":
+    unittest.main()
