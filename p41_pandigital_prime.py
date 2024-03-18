@@ -69,8 +69,13 @@ if __name__ == "__main__":
 
 
 
+
+
+
+
+
 # brute force solution
-def pandigital_prime(digit):
+def pandigital_primes(digit):
     string = "".join(str(i) for i in sorted(set(range(1, digit+1))))
     # create a pandigital number of n digits
     result = []
