@@ -56,6 +56,8 @@ def prev_permutation(arr):
     arr[i:] = arr[len(arr) - 1: i - 1: -1]
     print(arr)
     return True
+
+
 class Test(unittest.TestCase):
     def test_1(self):
         self.assertEqual(pandigital_prime(4), 4231)
@@ -68,27 +70,23 @@ if __name__ == "__main__":
     unittest.main()
 
 
-
-
-
-
-
-
 # brute force solution
-def pandigital_primes(digit):
-    string = "".join(str(i) for i in sorted(set(range(1, digit+1))))
-    # create a pandigital number of n digits
-    result = []
-    list_of_primes = find_primes(10**digit)
-    for num in list_of_primes:
-        if "".join(sorted(str(num))) == string:
-            result.append(num)
-    return max(result)
 
 
-def find_primes(n):
-    primes = []
-    for num in range(2, n):
-        if is_prime(num):
-            primes.append(num)
-    return primes
+# def pandigital_primes(digit):
+#     string = "".join(str(i) for i in sorted(set(range(1, digit+1))))
+#     # create a pandigital number of n digits
+#     result = []
+#     list_of_primes = find_primes(10**digit)
+#     for num in list_of_primes:
+#         if "".join(sorted(str(num))) == string:
+#             result.append(num)
+#     return max(result)
+
+
+# def find_primes(n):
+#     primes = []
+#     for num in range(2, n):
+#         if is_prime(num):
+#             primes.append(num)
+#     return primes
