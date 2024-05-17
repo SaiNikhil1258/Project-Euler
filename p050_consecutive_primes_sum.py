@@ -8,13 +8,14 @@
 # Which prime, below one-million, can be written as the sum of the most consecutive primes?
 
 
-#* Hint
+# * Hint
 #  first you want to have a list of primes within 1_000_000 and another bool array of a prime or not.
 # with two loops you loop through the numbers and checking if the sum is also a prime or not.
 
 
 import math
 import unittest
+
 
 def list_primality(n: int):
     # Sieve of Eratosthenes
@@ -37,11 +38,11 @@ def compute():
     primes = list_primes(999999)
     consecutive = 0
     for i in range(len(primes)):
-# you loop the primes and add all the other primes until 1000000 limit
+        # you loop the primes and add all the other primes until 1000000 limit
         sum = primes[i]
         count = 1
         for j in range(i+1, len(primes)):
-# loop through all the other primes and add them to sum and check if sum is a prime and less than the limit
+            # loop through all the other primes and add them to sum and check if sum is a prime and less than the limit
             sum += primes[j]
             count += 1
             if sum >= len(is_prime):
@@ -52,9 +53,11 @@ def compute():
                 consecutive = count
     return res
 
+
 class Test(unittest.TestCase):
     def test_1(self):
-        self.assertEqual(compute(),997651 )
+        self.assertEqual(compute(), 997651)
 
-if __name__ =="__main__":
+
+if __name__ == "__main__":
     unittest.main()
