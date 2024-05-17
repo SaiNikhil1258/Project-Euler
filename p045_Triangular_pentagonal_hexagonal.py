@@ -14,21 +14,32 @@
 # It can be verified that T285 = P165 = H143 = 40755.
 
 # Find the next triangle number that is also pentagonal and hexagonal.
+import unittest
+
 
 def main():
-    i=286
-    j=166
+    i = 286
+    j = 166
     k = 144
     while True:
         triangle = i*(i+1)//2
         pentagon = j*(j*3-1)//2
-        hexagon = k *(k*2-1)
+        hexagon = k * (k*2-1)
         minimum = min(triangle, pentagon, hexagon)
         if minimum == max(triangle, pentagon, hexagon):
-            return str(triangle)
-        if minimum == triangle: i+=1
-        if minimum == pentagon : j += 1
-        if minimum == hexagon : k+=1
+            return triangle
+        if minimum == triangle:
+            i += 1
+        if minimum == pentagon:
+            j += 1
+        if minimum == hexagon:
+            k += 1
 
 
-print(main())
+class Test(unittest.TestCase):
+    def test_1(self):
+        self.assertEqual(main(), 1533776805)
+
+
+if __name__ == "__main__":
+    unittest.main()
