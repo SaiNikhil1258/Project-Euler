@@ -15,7 +15,6 @@
 import unittest
 import math
 
-
 def list_primality(n: int):
     # Sieve of Eratosthenes
     result = [True] * (n + 1)

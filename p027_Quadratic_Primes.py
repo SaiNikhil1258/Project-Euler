@@ -59,6 +59,7 @@ def is_prime(n):
 
 
 def quadratic_primes(max_range):
+    '''Generates quadratic_primes within the given range '''
     max_a = max_range
     max_b = max_range
     max_n = 79
@@ -95,6 +96,9 @@ class Test(unittest.TestCase):
 
     def test_4(self):
         self.assertEqual(quadratic_primes(200), -4925)
+
+
+print(quadratic_primes(10))
 
 
 if __name__ == "__main__":

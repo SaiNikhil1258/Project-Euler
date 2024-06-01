@@ -47,7 +47,8 @@ def compute():
             count += 1
             if sum >= len(is_prime):
                 break
-# is sum is prime and count is greater than the consecutive then we have found a potential number we update it
+# is sum is prime and count is greater than the consecutive then we have found a potential number
+            # we update it
             if is_prime[sum] and count > consecutive:
                 res = sum
                 consecutive = count

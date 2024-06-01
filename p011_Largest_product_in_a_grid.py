@@ -22,8 +22,10 @@
 # 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48]
 # The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 
-# What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in a given arr grid?
+# What is the greatest product of four adjacent numbers in the same direction 
+#(up, down, left, right, or diagonally) in a given arr grid?
 
+import unittest
 
 
 
@@ -60,42 +62,40 @@ testGrid = [
 ]
 
 def get_max_product(grid):
-  max_product = 0
-  for i in range(len(grid)):
-    for j in range(len(grid[i])):
-      # Check horizontal products
-      if j < len(grid[i]) - 3:
-        product = grid[i][j] * grid[i][j + 1] * grid[i][j + 2] * grid[i][j + 3]
-        max_product = max(max_product,product)
-      # Check vertical products
-      if i < len(grid) - 3:
-        product = grid[i][j] * grid[i + 1][j] * grid[i + 2][j] * grid[i + 3][j]
-        max_product = max(max_product,product)
-      # Check diagonal products (top-left to bottom-right)
-      if i < len(grid) - 3 and j < len(grid[i]) - 3:
-        product = grid[i][j] * grid[i + 1][j + 1] * grid[i + 2][j + 2] * grid[i + 3][j + 3]
-        max_product = max(max_product,product)
-      # Check diagonal products (bottom-left to top-right)
-      if i >= 3 and j < len(grid[i]) - 3:
-        product = grid[i][j] * grid[i - 1][j + 1] * grid[i - 2][j + 2] * grid[i - 3][j + 3]
-        max_product = max(max_product,product)
-  return max_product
+    max_product = 0
+    for i in range(len(grid)):
+        for j in range(len(grid[i])):
+        # Check horizontal products
+            if j < len(grid[i]) - 3:
+                product = grid[i][j] * grid[i][j + 1] * grid[i][j + 2] * grid[i][j + 3]
+                max_product = max(max_product,product)
+            # Check vertical products
+            if i < len(grid) - 3:
+                product = grid[i][j] * grid[i + 1][j] * grid[i + 2][j] * grid[i + 3][j]
+                max_product = max(max_product,product)
+            # Check diagonal products (top-left to bottom-right)
+            if i < len(grid) - 3 and j < len(grid[i]) - 3:
+                product = grid[i][j] * grid[i + 1][j + 1] * grid[i + 2][j + 2] * grid[i + 3][j + 3]
+                max_product = max(max_product,product)
+            # Check diagonal products (bottom-left to top-right)
+            if i >= 3 and j < len(grid[i]) - 3:
+                product = grid[i][j] * grid[i - 1][j + 1] * grid[i - 2][j + 2] * grid[i - 3][j + 3]
+                max_product = max(max_product,product)
+    return max_product
 
 # print(get_max_product(grid))
 # print(get_max_product(testGrid))
 
 
 
-import unittest
 class Testget_max_product(unittest.TestCase):
-     
-  def test_get_max_product_1(self):
-    self.assertEqual(get_max_product(grid),70600674)
-  
-  def test_get_max_product_2(self):
-    self.assertEqual(get_max_product(testGrid),14169081)
-      
         
+    def test_get_max_product_1(self):
+        self.assertEqual(get_max_product(grid),70600674)
+
+    def test_get_max_product_2(self):
+        self.assertEqual(get_max_product(testGrid),14169081)
+                
 if __name__ == '__main__':
     unittest.main()
 
