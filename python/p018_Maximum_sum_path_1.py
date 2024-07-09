@@ -86,7 +86,7 @@ def max_path_sum(triangle):
             triangle[i][j] += max(triangle[i+1][j],triangle[i+1][j+1])
             
     return triangle[0][0]
-    # if you dont want to modify the array you can use another array similar in dimensions to the input array
+#    "# if you dont want to csmodify the array you can use another array similar in dimensions to the input array"
 
 
 import unittest

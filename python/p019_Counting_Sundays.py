@@ -13,6 +13,7 @@
 # date.weekday()
 # Returns the day of the week as an integer, where Monday is 0 and Sunday is 6. For example, date(2002, 12, 4).weekday() == 2, a Wednesday
 
+
 # Doomsday Algorithm
 def days_in_month(month, is_leap_year):
     """Returns the number of days in a month, considering leap years."""
@@ -21,9 +22,11 @@ def days_in_month(month, is_leap_year):
     else:
         return 31 if month in (1, 3, 5, 7, 8, 10, 12) else 30
 
+
 def is_leap_year(year):
     """Determines if a year is a leap year."""
     return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
+
 
 def day_of_week(day, month, year):
     """Calculates the day of the week for a given date."""
@@ -34,6 +37,7 @@ def day_of_week(day, month, year):
     y = year % 100
     w = (day + (26 * (month + 1) // 10) + y + y // 4 - c // 4 - 2 * c) % 7
     return w
+
 
 def count_sundays_on_first(start_year, end_year):
     """Counts Sundays occurring on the first day of a month within a timeframe."""
@@ -47,17 +51,18 @@ def count_sundays_on_first(start_year, end_year):
     return sunday_count
 
 
-
 # using python date time module
 from datetime import date
 
-def counting_sundays(lower,upper):
+
+def counting_sundays(lower, upper):
     count = 0
-    for y in range(lower,upper+1):
-        for m in range(1,13):
-            if date(y,m,1).weekday() == 6:
-                count +=1
+    for y in range(lower, upper + 1):
+        for m in range(1, 13):
+            if date(y, m, 1).weekday() == 6:
+                count += 1
     return count
+
 
 # print(counting_sundays(1901,2000))
 
@@ -70,15 +75,15 @@ import unittest
 
 
 class Test(unittest.TestCase):
-    
-    def test_1(self):
-        self.assertEqual(counting_sundays(1901,2000),171)
-        self.assertEqual(count_sundays_on_first(1901,2000),171)
-        
-    def test_2(self):
-        self.assertEqual(counting_sundays(1995,2000),10)
-        self.assertEqual(count_sundays_on_first(1995,2000),10)
-        
 
-if __name__=='__main__':
+    def test_1(self):
+        self.assertEqual(counting_sundays(1901, 2000), 171)
+        self.assertEqual(count_sundays_on_first(1901, 2000), 171)
+
+    def test_2(self):
+        self.assertEqual(counting_sundays(1995, 2000), 10)
+        self.assertEqual(count_sundays_on_first(1995, 2000), 10)
+
+
+if __name__ == "__main__":
     unittest.main()

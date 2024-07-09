@@ -22,8 +22,10 @@ def rename_files():
             new_file_name = f"p{new_number}_{'_'.join(parts[1:])}"
             # print(f"{filename} -> {new_file_name}")
             try:
-                os.rename(os.path.join(current_dir, filename),
-                          os.path.join(current_dir, new_file_name))
+                os.rename(
+                    os.path.join(current_dir, filename),
+                    os.path.join(current_dir, new_file_name),
+                )
             except OSError as error:
                 print(error)
 

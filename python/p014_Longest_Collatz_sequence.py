@@ -15,22 +15,7 @@
 # using a while true loop initialize if n is odd then perform 3n+1 if it is odd then perform n/2
 
 
-
-# def collatz(n):
-#     i  = 1
-#     while True:
-#         if n % 2 == 0:
-#             n = n/2
-#             i += 1
-#         else:
-#             n = 3*n + 1
-#             i += 1
-            
-#         if n == 1:
-#             break
-#     return i
-
-
+import unittest
 
 def len_sequence(n):
     if n < 1:
@@ -56,7 +41,6 @@ def collatz(n):
 
 # print(collatz(10))
 
-import unittest
 
 class TestCollatz(unittest.TestCase):
     def test_collatz(self):

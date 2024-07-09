@@ -3,7 +3,6 @@
 # Find the largest palindrome made from the product of two n-digit numbers.
 
 import unittest
-import os
 
 
 def largest_palindrome_product(n):
