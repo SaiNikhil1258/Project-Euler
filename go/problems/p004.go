@@ -5,7 +5,6 @@
 package problems
 
 import (
-	"fmt"
 	"math"
 	"strconv"
 )
@@ -26,10 +25,10 @@ func is_palindrome(i int64) bool {
 func Largest_palindrome(n int64) int64 {
 	max_num, min_num := math.Pow(10, float64(n))-1, math.Pow(10, float64(n-1))
 	res := int64(0)
-	fmt.Println("before: ", res)
+	// fmt.Println("before: ", res)
 	for i := max_num; i > min_num; i-- {
 		if i*max_num < float64(res) {
-			fmt.Println("the res value is:", res)
+			// fmt.Println("the res value is:", res)
 			break
 		}
 		for j := i; j > min_num; j-- {
