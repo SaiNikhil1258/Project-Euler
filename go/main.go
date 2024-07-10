@@ -3,9 +3,12 @@ package main
 import (
 	"fmt"
 	"project-euler/problems"
+	"time"
 )
 
 func main() {
+
+  x := time.Now()
 	p1 := problems.Natural(10)
 	fmt.Println("Result of P001:", p1)
 	p2 := problems.Fib_n_natural(34)
@@ -21,4 +24,12 @@ func main() {
 	p7 := problems.Nth_prime(10001)
 	fmt.Println("Result of P007:", p7)
 
+	p8 := problems.Largest_product_in_a_series(13)
+	fmt.Println("Result of P008:", p8)
+	p9 := problems.Pythagorean_triplets(120)
+	fmt.Println("Result of P009:", p9)
+	p10 := problems.Summation_of_primes(2000000)
+	fmt.Println("Result of P010:", p10)
+	y := time.Since(x)
+	fmt.Println("The time taken is", y)
 }
