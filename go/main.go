@@ -7,11 +7,7 @@ import (
 )
 
 func main() {
-<<<<<<< HEAD
-=======
-
-  x := time.Now()
->>>>>>> bb3ec98885c6d5b70275406a84e17c6f6a73cb9e
+	x := time.Now()
 	p1 := problems.Natural(10)
 	fmt.Println("Result of P001:", p1)
 	p2 := problems.Fib_n_natural(34)
@@ -26,9 +22,6 @@ func main() {
 	fmt.Println("Result of P006:", p6)
 	p7 := problems.Nth_prime(10001)
 	fmt.Println("Result of P007:", p7)
-
-<<<<<<< HEAD
-=======
 	p8 := problems.Largest_product_in_a_series(13)
 	fmt.Println("Result of P008:", p8)
 	p9 := problems.Pythagorean_triplets(120)
@@ -37,5 +30,4 @@ func main() {
 	fmt.Println("Result of P010:", p10)
 	y := time.Since(x)
 	fmt.Println("The time taken is", y)
->>>>>>> bb3ec98885c6d5b70275406a84e17c6f6a73cb9e
 }
