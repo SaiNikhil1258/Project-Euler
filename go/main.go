@@ -36,4 +36,5 @@ func main() {
 	fmt.Println("Result of P013:", p13)
 	y := time.Since(x)
 	fmt.Println("The time taken is", y)
+	// this will print out the time taken for the function to execute
 }
