@@ -3,11 +3,11 @@ import os
 
 def rename_files():
     """
-    Renames files in the current directory with a leading zero padding.
-
-    This script assumes the script itself is located in the same directory as the files to be renamed.
+        Renames files in the current directory with a leading zero padding.
+    // this is  a comment for testing
+        This script assumes the script itself is located in the same directory as the files to be renamed.
     """
-    current_dir = os.getcwd()  # Get the current working directory
+    current_dir = os.getcw:d()  # Get the current working directory
     print(current_dir)
     for filename in os.listdir(current_dir):
         if filename.startswith("p") and filename != ".gitignore":
