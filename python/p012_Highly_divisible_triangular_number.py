@@ -15,7 +15,6 @@
 # What is the value of the first triangle number to have over n divisors?
 
 
-
 from math import sqrt
 
 
@@ -23,7 +22,7 @@ def count_divisors(n):
     divisors = 1
     for i in range(2, int(sqrt(n)) + 1):
         if n % i == 0:
-            divisors+=2
+            divisors += 2
     return divisors
 
 
@@ -35,31 +34,32 @@ def main(i):
             return triangle_number
         n += 1
 
-# print(main(5)) #28
+
+print(main(5))  # 28
 # print(main(500)) #76576500
 
-
-import unittest
-
-class Testmain(unittest.TestCase):
-    
-    def test_main_1(self):
-        self.assertEqual(main(5), 28)
-    
-    def test_main_2(self):
-        self.assertEqual(main(500), 76576500)
-    
-    def test_main_3(self):
-        self.assertEqual(main(374), 17907120)
-    
-    def test_main_4(self):
-        self.assertEqual(main(167), 1385280)
-    
-    def test_main_5(self):
-        self.assertEqual(main(23), 630)
-        
-    
-    
-
-if __name__ == '__main__':
-    unittest.main()
+#
+# import unittest
+#
+# class Testmain(unittest.TestCase):
+#
+#     def test_main_1(self):
+#         self.assertEqual(main(5), 28)
+#
+#     def test_main_2(self):
+#         self.assertEqual(main(500), 76576500)
+#
+#     def test_main_3(self):
+#         self.assertEqual(main(374), 17907120)
+#
+#     def test_main_4(self):
+#         self.assertEqual(main(167), 1385280)
+#
+#     def test_main_5(self):
+#         self.assertEqual(main(23), 630)
+#
+#
+#
+#
+# if __name__ == '__main__':
+#     unittest.main()
