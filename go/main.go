@@ -28,6 +28,12 @@ func main() {
 	fmt.Println("Result of P009:", p9)
 	p10 := problems.Summation_of_primes(2000000)
 	fmt.Println("Result of P010:", p10)
+	p11 := problems.Largest_product_in_grid()
+	fmt.Println("Result of P011:", p11)
+	p12 := problems.Highly_divisible_triangular_number(500)
+	fmt.Println("Result of P012:", p12)
+	p13 := problems.Large_sum(10)
+	fmt.Println("Result of P013:", p13)
 	y := time.Since(x)
 	fmt.Println("The time taken is", y)
 }
