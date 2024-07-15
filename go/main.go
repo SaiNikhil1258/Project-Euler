@@ -36,4 +36,5 @@ func main() {
 	fmt.Println("Result of P013:", p13)
 	y := time.Since(x)
 	fmt.Println("The time taken is", y)
+	// This time since will get the time it has been since the time stamp x
 }
