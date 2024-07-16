@@ -119,3 +119,5 @@ func Large_sum(n int) string {
 	}
 	return sum.String()[:n]
 }
+
+// to process large numbers it is better to have them as strings for this particular problem.
