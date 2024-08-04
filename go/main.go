@@ -34,8 +34,10 @@ func main() {
 	fmt.Println("Result of P012:", p12)
 	p13 := problems.Large_sum(10)
 	fmt.Println("Result of P013:", p13)
-	p14 := problems.Collatz(9)
+	p14 := problems.Collatz(14)
 	fmt.Println("Result of p014:", p14)
+	p15 := problems.Lattice_paths()
+	fmt.Println("Result of p015:", p15)
 	y := time.Since(x)
 	fmt.Println("The time taken is", y)
 	// This time since will get the time it has been since the time stamp x
