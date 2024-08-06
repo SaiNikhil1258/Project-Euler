@@ -38,6 +38,8 @@ func main() {
 	fmt.Println("Result of p014:", p14)
 	p15 := problems.Lattice_paths()
 	fmt.Println("Result of p015:", p15)
+	p16 := problems.Power_digit_sums()
+	fmt.Println("Result of p016:", p16)
 	y := time.Since(x)
 	fmt.Println("The time taken is", y)
 	// This time since will get the time it has been since the time stamp x
