@@ -11,22 +11,18 @@ You want an another set that has all the numbers from 1 to n
 All the positive numbers that can be written as the sum of two abundant numbers will be the difference between them"""
 
 
-
-
 def sum_proper_divisors(n):
     divisors = [1]
-    for i in range(2, int(n ** 0.5) + 1):
+    for i in range(2, int(n**0.5) + 1):
         if n % i == 0:
             divisors.append(i)
             divisors.append(n // i)
     return sum(set(divisors))
 
 
-
-
 def abundant_numbers(n):
     abundant_numbers = []
-    for i in range(1, n+1):
+    for i in range(1, n + 1):
         if sum_proper_divisors(i) > i:
             abundant_numbers.append(i)
     return abundant_numbers
@@ -37,32 +33,29 @@ def non_abundant_sum(abundant_numbers, n):
     abundant_sums = set()
     for i in abundant_numbers:
         for j in abundant_numbers:
-          abundant_sums.add(i + j)
+            abundant_sums.add(i + j)
     non_abundant -= abundant_sums
     return sum(non_abundant)
 
 
-
 # print(non_abundant_sum(abundant_numbers(15000),15000))
 import unittest
+
+
 class Test(unittest.TestCase):
-    
+
     def test_1(self):
-        self.assertEqual(non_abundant_sum(abundant_numbers(10000),10000),3731004)
-        
+        self.assertEqual(non_abundant_sum(abundant_numbers(10000), 10000), 3731004)
+
     def test_2(self):
-        self.assertEqual(non_abundant_sum(abundant_numbers(15000),15000),4039939)
-        
+        self.assertEqual(non_abundant_sum(abundant_numbers(15000), 15000), 4039939)
+
     def test_3(self):
-        self.assertEqual(non_abundant_sum(abundant_numbers(20000),20000),4159710)
-        
+        self.assertEqual(non_abundant_sum(abundant_numbers(20000), 20000), 4159710)
+
     def test_4(self):
-        self.assertEqual(non_abundant_sum(abundant_numbers(28123),28123),4179871)
-        
+        self.assertEqual(non_abundant_sum(abundant_numbers(28123), 28123), 4179871)
 
-if __name__=='__main__':
+
+if __name__ == "__main__":
     unittest.main()
-
-
-
-

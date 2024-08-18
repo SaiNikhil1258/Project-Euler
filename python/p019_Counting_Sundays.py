@@ -12,6 +12,7 @@
 
 # date.weekday()
 # Returns the day of the week as an integer, where Monday is 0 and Sunday is 6. For example, date(2002, 12, 4).weekday() == 2, a Wednesday
+from datetime import date
 
 
 # Doomsday Algorithm
@@ -47,12 +48,12 @@ def count_sundays_on_first(start_year, end_year):
         for month in range(1, 13):
             if day_of_week(1, month, year) == 0:
                 sunday_count += 1
+                print(month, year)
         year += 1
     return sunday_count
 
 
 # using python date time module
-from datetime import date
 
 
 def counting_sundays(lower, upper):
@@ -64,6 +65,8 @@ def counting_sundays(lower, upper):
     return count
 
 
+#
+#
 # print(counting_sundays(1901,2000))
 
 # print(count_sundays_on_first(1901, 2000))  # Output: 171

@@ -14,8 +14,6 @@
 # Find the value of d < n for which 1/d contains the longest recurring cycle in its decimal fraction part.
 
 
-
-
 def max_reciprocal_cycle_length(n):
     max_cycle_length = 0
     max_cycle_d = 0
@@ -34,7 +32,8 @@ def get_cycle_length(d):
         remainders.append(remainder)
         remainder *= 10
         remainder %= d
-    return len(remainders) - remainders.index(remainder)    
+    return len(remainders) - remainders.index(remainder)
+
 
 # max_reciprocal_cycle_length(900)
 import unittest
@@ -43,17 +42,16 @@ import unittest
 class Test(unittest.TestCase):
     def test_1(self):
         self.assertEqual(max_reciprocal_cycle_length(1000), 983)
-        
+
     def test_2(self):
-        self.assertEqual(max_reciprocal_cycle_length(700),659)
-        
+        self.assertEqual(max_reciprocal_cycle_length(700), 659)
+
     def test_3(self):
-        self.assertEqual(max_reciprocal_cycle_length(800),743)
-        
+        self.assertEqual(max_reciprocal_cycle_length(800), 743)
+
     def test_4(self):
-        self.assertEqual(max_reciprocal_cycle_length(900),887)
-        
+        self.assertEqual(max_reciprocal_cycle_length(900), 887)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
-
