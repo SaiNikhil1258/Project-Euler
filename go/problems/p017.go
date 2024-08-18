@@ -44,6 +44,11 @@ var tens = map[int]int{
 	9:  6, //"ninety",
 }
 
+/*
+// NOTE: you create two maps one for singe digit number and one for two digit numbers from then on you can
+add the third digits and more from them on or you can do that also as an array since we only do for the numbers
+in the range of thousand so use if only
+*/
 func Number_letter_count(n int) uint64 {
 	sum := uint64(0)
 	for i := 1; i <= n; i++ {
