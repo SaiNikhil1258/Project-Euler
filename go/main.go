@@ -60,6 +60,8 @@ func main() {
 	fmt.Println("Result of p025:", p25)
 	p26 := problems.Max_reciprocal_cycle_length()
 	fmt.Println("Result of p026:", p26)
+	p27 := problems.Quadratic_primes()
+	fmt.Println("Result of p027", p27)
 	y := time.Since(x)
 	fmt.Println("The time taken is", y)
 	// This time since will get the time it has been since the time stamp x

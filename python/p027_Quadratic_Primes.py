@@ -22,7 +22,7 @@
 # Find the product of the coefficients,  a and  b, for the quadratic expression
 # that produces the maximum number of primes for consecutive values of  n, starting with  n=0
 
-import math
+# import math
 import unittest
 
 
@@ -41,7 +41,7 @@ def is_prime(n):
     while k % 2 == 0:
         i += 1
         k //= 2
-    d = k
+    # d = k
 
     for a in [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]:
         if a >= n:
@@ -59,7 +59,7 @@ def is_prime(n):
 
 
 def quadratic_primes(max_range):
-    '''Generates quadratic_primes within the given range '''
+    """Generates quadratic_primes within the given range"""
     max_a = max_range
     max_b = max_range
     max_n = 79
@@ -72,7 +72,7 @@ def quadratic_primes(max_range):
         for b in range(-max_b, max_b + 1):
             current_primes = 0
             for n in range(0, max_n + 1):
-                if is_prime(n**2 + a*n + b):
+                if is_prime(n**2 + a * n + b):
                     current_primes += 1
                 else:
                     break
@@ -98,7 +98,7 @@ class Test(unittest.TestCase):
         self.assertEqual(quadratic_primes(200), -4925)
 
 
-print(quadratic_primes(10))
+# print(quadratic_primes(10))
 
 
 if __name__ == "__main__":
