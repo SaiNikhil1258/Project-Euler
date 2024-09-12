@@ -78,6 +78,8 @@ func main() {
 	fmt.Println("Result of p034:", p34, p034)
 	p35 := problems.CircularPrimes()
 	fmt.Println("Result of p035:", p35)
+	p36 := problems.Double_base_palindrome(1000)
+	fmt.Println("Result of p036:", p36)
 	y := time.Since(x)
 	fmt.Println("The time taken is", y)
 	// This time since will get the time it has been since the time stamp x

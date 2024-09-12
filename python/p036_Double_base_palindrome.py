@@ -21,6 +21,8 @@ def Double_base_palindromes(n):
         if is_palindrome(i) and is_palindrome(decimal_to_binary(i)):
             sum += i
     return sum
+
+
 # print(Double_base_palindromes(1000000))
 
 
@@ -39,5 +41,5 @@ class Test(unittest.TestCase):
         self.assertEqual(Double_base_palindromes(500000), 286602)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
