@@ -19,45 +19,49 @@
 # for 6 digits the limit is less than 1000
 
 
-
-import math 
+import math
 import unittest
 
-def pan_digital_products(digits=9):
-	if digits ==4:
-		limit = 100
-	elif digits ==6: #these checks will reduce the number of redundant calculations.
-		limit = 1000
-	else:
-		limit = 10000
-	ans= sum(i for i in range(1,limit) if is_pandigital(i,digits))
-	return ans
 
-def is_pandigital(n,digits):    
-    number = [str(i) for i in range(1,digits+1)]
+def pan_digital_products(digits=9):
+    if digits == 4:
+        limit = 100
+    elif digits == 6:  # these checks will reduce the number of redundant calculations.
+        limit = 1000
+    else:
+        limit = 10000
+    ans = sum(i for i in range(1, limit) if is_pandigital(i, digits))
+    return ans
+
+
+def is_pandigital(n, digits):
+    number = [str(i) for i in range(1, digits + 1)]
     # print("".join(number))
-    for i in range(1,math.isqrt(n)+1):
+    for i in range(1, math.isqrt(n) + 1):
         if n % i == 0:
-            temp = str(n) + str(i) + str(n//i)
+            temp = str(n) + str(i) + str(n // i)
             if "".join(sorted(temp)) == "".join(number):
                 return True
     return False
 
 
-class Test(unittest.TestCase):
-
-	def test_1(self):
-		self.assertEqual(pan_digital_products(4),12)
-		
-	def test_2(self):
-		self.assertEqual(pan_digital_products(6),162)
-		
-	def test_3(self):
-		self.assertEqual(pan_digital_products(7),0)
-
-	def test_4(self):
-		self.assertEqual(pan_digital_products(),45228)
+print(pan_digital_products(4))
 
 
-if __name__ == "__main__":
-      unittest.main()			
+# class Test(unittest.TestCase):
+#
+#     def test_1(self):
+#         self.assertEqual(pan_digital_products(4), 12)
+#
+#     def test_2(self):
+#         self.assertEqual(pan_digital_products(6), 162)
+#
+#     def test_3(self):
+#         self.assertEqual(pan_digital_products(7), 0)
+#
+#     def test_4(self):
+#         self.assertEqual(pan_digital_products(), 45228)
+#
+#
+# if __name__ == "__main__":
+#     unittest.main()

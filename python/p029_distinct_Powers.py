@@ -13,31 +13,29 @@
 
 
 def distinct_powers(n):
-    a, b, list = 1, 1, [] 
-    for i in range(2, n+1):
-        for j in range(2, n+1):
+    list = []
+    for i in range(2, n + 1):
+        for j in range(2, n + 1):
             list.append(i**j)
-    return len(sorted(set(list)))            
-    
-
+    return len(sorted(set(list)))
 
 
 import unittest
 
+
 class Test(unittest.TestCase):
     def test_1(self):
-        self.assertEqual(distinct_powers(15),177)
-        
+        self.assertEqual(distinct_powers(15), 177)
+
     def test_2(self):
-        self.assertEqual(distinct_powers(20),324)
-        
+        self.assertEqual(distinct_powers(20), 324)
+
     def test_3(self):
-        self.assertEqual(distinct_powers(25),519)
-        
+        self.assertEqual(distinct_powers(25), 519)
+
     def test_4(self):
-        self.assertEqual(distinct_powers(30),755)
+        self.assertEqual(distinct_powers(30), 755)
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     unittest.main()
-

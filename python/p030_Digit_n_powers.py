@@ -11,42 +11,41 @@
 
 import unittest
 
-def digit_power(n,power):
-# # print(sum(result))
-    digits = []
-    string = str(n)
-    for i in string:
-        digits.append(int(i)**power)
 
-    return sum(digits)
+def digit_power(n, power):
+    sum = 0
+    while n > 0:
+        digit = n % 10
+        sum += digit**power
+        n //= 10
+    return sum
 
 
-# print(digit_power(8208))
+# print(digit_power(1634, 4))
+# print(1**4 + 6**4 + 3**4 + 4**4)
+
 
 def Digitpower(n):
     result = []
-    for i in range(2, 10**(n+1)):
-        if i == digit_power(i,n):
+    for i in range(2, 10 ** (n + 1)):
+        if i == digit_power(i, n):
             result.append(i)
     return sum(result)
 
 
-
 class Test(unittest.TestCase):
     def test_1(self):
-        self.assertEqual(Digitpower(2),0)
-        
+        self.assertEqual(Digitpower(2), 0)
+
     def test_2(self):
-        self.assertEqual(Digitpower(3),1301)
-        
+        self.assertEqual(Digitpower(3), 1301)
+
     def test_3(self):
-        self.assertEqual(Digitpower(4),19316)
-        
+        self.assertEqual(Digitpower(4), 19316)
+
     def test_4(self):
-        self.assertEqual(Digitpower(5),443839)
+        self.assertEqual(Digitpower(5), 443839)
+
 
 if __name__ == "__main__":
     unittest.main()
-    
-    
-
