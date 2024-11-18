@@ -1,3 +1,32 @@
+# Project Euler Solutions
+
+This repository contains my solutions to problems from [Project Euler](https://projecteuler.net/), a collection of challenging mathematical problems that require computational approaches to solve. Each problem is designed to encourage mathematical thinking, problem-solving, and efficient coding practices.
+
+## About Project Euler
+
+Project Euler offers a diverse set of problems ranging from simple computations to complex algorithmic challenges. It is a great platform for:
+
+- Strengthening problem-solving skills
+- Learning and applying mathematical concepts
+- Improving coding proficiency in any programming language
+
+## Features of This Repository
+
+- **Code for Each Problem**: Each solution is structured to align with the corresponding problem statement.
+- **Multi-Language Support**: Solutions can be extended to support multiple programming languages. Currently, the repository uses `[Your preferred programming language(s)]`.
+- **Well-Commented Code**: Each script includes explanations for key steps to aid understanding.
+
+## Repository Structure
+
+
+
+
+
+
+
+
+
+
 # My Project Euler Solutions
 
 This repository houses my personal journey through Project Euler, a website offering a diverse collection of mathematical problems to be solved using code. Whether you're a seasoned programmer or a curious beginner, Project Euler provides a unique blend of intellectual challenge and programming practice.
