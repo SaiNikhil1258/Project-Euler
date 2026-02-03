@@ -2,15 +2,18 @@
 
 # Find the sum of all the multiples of 3 or 5 below the provided parameter value number.
 
+# def multiples_of_3_or_5(number):
+#     multiples = []
+#     for i in range(1, number):
+#         if i % 3 == 0 or i % 5 == 0:
+#             multiples.append(i)
+#     return sum(multiples)
+
+
 def multiples_of_3_or_5(number):
-    multiples = []
-    for i in range(1, number):
-        if i % 3 == 0 or i % 5 == 0:
-            multiples.append(i)
-    return sum(multiples)
+    return sum(i for i in range(1,number) if i%3==0 or i%5==0)
 
-# print(multiples_of_3_or_5(100))
-
+    
 
 # 233168    
 import unittest
@@ -36,6 +39,6 @@ if __name__ == '__main__':
     unittest.main()
 
 
-# multiples_of_3_or_5(1000) should return 233168
-# multiples_of_3_or_5(49) should return 543
-# multiples_of_3_or_5(19564) should return 89301183
+# # multiples_of_3_or_5(1000) should return 233168
+# # multiples_of_3_or_5(49) should return 543
+# # multiples_of_3_or_5(19564) should return 89301183

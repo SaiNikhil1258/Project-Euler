@@ -3,8 +3,11 @@
 # 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 # By considering the terms in the Fibonacci sequence whose values do not exceed n, find the sum of the even-valued terms.
 
+
+
 def even_fibonacci_series(n):
-    """sum of the even fibonacci series
+    """
+    sum of the even fibonacci series
 
     Args:
         n(int): given a number 
@@ -12,16 +15,34 @@ def even_fibonacci_series(n):
     Returns:
         int: the sum of the even numbers in the fibonacci series 
     """
+    fib_list=[1,2]
+    while fib_list[-1]<n:
+        fib_list.append(fib_list[-1] + fib_list[-2])
+        
+    return sum(i for i in fib_list if i %2==0)
     
-    fib_sequence = [1, 2]
-    while fib_sequence[-1] < n:
-        next_number = fib_sequence[-2] + fib_sequence[-1]
-        fib_sequence.append(next_number)
-    even_fib_sum = 0
-    for number in fib_sequence:
-        if number % 2 == 0:
-            even_fib_sum += number
-    return even_fib_sum
+print(even_fibonacci_series(100))
+
+
+# def even_fibonacci_series(n):
+#     """sum of the even fibonacci series
+
+#     Args:
+#         n(int): given a number 
+
+#     Returns:
+#         int: the sum of the even numbers in the fibonacci series 
+#     """
+    
+#     fib_sequence = [1, 2]
+#     while fib_sequence[-1] < n:
+#         next_number = fib_sequence[-2] + fib_sequence[-1]
+#         fib_sequence.append(next_number)
+#     even_fib_sum = 0
+#     for number in fib_sequence:
+#         if number % 2 == 0:
+#             even_fib_sum += number
+#     return even_fib_sum
 
 
 
