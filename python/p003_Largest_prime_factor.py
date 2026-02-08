@@ -2,18 +2,33 @@
 
 # What is the largest prime factor of the given number? 
 
+"""
+    check if the number is less than 2 then no need to check
+    we divide the number by 2 until it is not possible to divide it by 2
+    after that we will start the for loop from 3, two steps at a time going 
+    through all the odd numbers untill the sqrt of the number x j
+"""
 
-#  the intuition is to first find the 
 def largest_prime_factor(number):
     """Return the largest prime factor of the given number."""
     # Find all the prime factors of the number.
+    if number < 2:
+        return None
+
     prime_factors = []
-    for i in range(2, int(number ** 0.5) + 1):
+    if number %2 ==0:
+        prime_factors.append(2)
+        while number %2==0:
+            number //=2
+        
+    for i in range(3, int(number ** 0.5) + 1,2):
         if number % i == 0:
             prime_factors.append(i)
             while number % i == 0:
                 number //= i
     # If the number is prime, it is its own largest prime factor.
+    # if the last remaining number is greater than 1 then its the last prime factor
+
     if number > 1:
         prime_factors.append(number)
     # Return the largest prime factor.
@@ -35,6 +50,12 @@ class TestLargestPrimeFactor(unittest.TestCase):
     def test_largest_prime_factor_2(self):
         self.assertEqual(largest_prime_factor(600851475143), 6857)
 
+    def test_largest_prime_factor_6(self):
+        self.assertEqual(largest_prime_factor(600851475143), 6857)
+    def test_largest_prime_factor_7(self):
+        self.assertEqual(largest_prime_factor(600851475143), 6857)
+    def test_largest_prime_factor_8(self):
+        self.assertEqual(largest_prime_factor(600851475143), 6857)
     def test_largest_prime_factor_3(self):
         self.assertEqual(largest_prime_factor(10), 5)
 
