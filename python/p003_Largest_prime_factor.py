@@ -20,6 +20,10 @@ def largest_prime_factor(number):
         prime_factors.append(2)
         while number %2==0:
             number //=2
+
+            
+            
+            
         
     for i in range(3, int(number ** 0.5) + 1,2):
         if number % i == 0:
@@ -41,29 +45,41 @@ def largest_prime_factor(number):
 
 # 6857
 import unittest
+import pytest
 
-class TestLargestPrimeFactor(unittest.TestCase):
+@pytest.mark.parametrize("number, expected", [
+    (13195, 29),
+    (600851475143, 6857),
+    (10, 5),
+    (17, 17),
+    (100, 5),
+])
+def test_logic(number, expected):
+    assert largest_prime_factor(number) == expected
 
-    def test_largest_prime_factor_1(self):
-        self.assertEqual(largest_prime_factor(13195), 29)
 
-    def test_largest_prime_factor_2(self):
-        self.assertEqual(largest_prime_factor(600851475143), 6857)
+# class TestLargestPrimeFactor(unittest.TestCase):
 
-    def test_largest_prime_factor_6(self):
-        self.assertEqual(largest_prime_factor(600851475143), 6857)
-    def test_largest_prime_factor_7(self):
-        self.assertEqual(largest_prime_factor(600851475143), 6857)
-    def test_largest_prime_factor_8(self):
-        self.assertEqual(largest_prime_factor(600851475143), 6857)
-    def test_largest_prime_factor_3(self):
-        self.assertEqual(largest_prime_factor(10), 5)
+#     def test_largest_prime_factor_1(self):
+#         self.assertEqual(largest_prime_factor(13195), 29)
 
-    def test_largest_prime_factor_4(self):
-        self.assertEqual(largest_prime_factor(17), 17)
+#     def test_largest_prime_factor_2(self):
+#         self.assertEqual(largest_prime_factor(600851475143), 6857)
 
-    def test_largest_prime_factor_5(self):
-        self.assertEqual(largest_prime_factor(100), 5)
+#     def test_largest_prime_factor_6(self):
+#         self.assertEqual(largest_prime_factor(600851475143), 6857)
+#     def test_largest_prime_factor_7(self):
+#         self.assertEqual(largest_prime_factor(600851475143), 6857)
+#     def test_largest_prime_factor_8(self):
+#         self.assertEqual(largest_prime_factor(600851475143), 6857)
+#     def test_largest_prime_factor_3(self):
+#         self.assertEqual(largest_prime_factor(10), 5)
 
-if __name__ == '__main__':
-    unittest.main()
+#     def test_largest_prime_factor_4(self):
+#         self.assertEqual(largest_prime_factor(17), 17)
+
+#     def test_largest_prime_factor_5(self):
+#         self.assertEqual(largest_prime_factor(100), 5)
+
+# if __name__ == '__main__':
+#     unittest.main()

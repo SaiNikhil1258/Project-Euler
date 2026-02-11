@@ -22,7 +22,7 @@ import unittest
 
 def main():
     # this is the trick we only return the number that doesn't satisfy the condition
-    ans = next(itertools.filterfalse(test_goldbach, itertools.count(9, 2)))
+    ans = next(itertools.filterfalse(goldbach, itertools.count(9, 2)))
     return ans
 
 
@@ -42,7 +42,7 @@ def is_prime(n):
     return True
 
 
-def test_goldbach(n):
+def goldbach(n):
     if n % 2 == 0 or is_prime(n):
         # if prime then not a composite number
         return True
